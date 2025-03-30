@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Contact Me{% endblock %}
+
+{% block content %}
+<section id="contact" class="container my-5">
+  <h2>Contact Me</h2>
+  <form action="{{ url_for('contact') }}" method="POST" class="mb-3">
+    <div class="mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" />
+    </div>
+    <div class="mb-3">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" />
+    </div>
+    <div class="mb-3">
+      <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+  <p>Email: <a href="mailto:rittithaker2314@gmail.com">rittithaker2314@gmail.com</a></p>
+</section>
+{% endblock %}

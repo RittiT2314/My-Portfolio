@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}My Portfolio | Home{% endblock %}
+
+{% block content %}
+<!-- Hero header section -->
+<header class="text-center bg-secondary text-white p-5">
+  <h1>Ritti Thaker</h1>
+  <p class="lead">Economics Master's Student | Data Analyst | Research Enthusiast</p>
+</header>
+
+<!-- About Section -->
+<section id="about" class="container my-5">
+  <h2>About Me</h2>
+  <p>
+    Hello! I'm Ritti Thaker, a detail-oriented and analytical Economics Master's student at Ashoka University, passionate about applying data analytics and econometric models to decipher complex economic phenomena. I possess expertise in Python, STATA, and MATLAB, and have extensive experience in research, policy analysis, and handling large-scale datasets. Through my academic journey, I have explored courses like Microeconomics, Econometrics, and Global Finance, while gaining practical exposure through various research projects and internships. 
+    My experiences have allowed me to combine theoretical knowledge with hands-on application, making me proficient in data analysis, forecasting, and visualization. I thrive in dynamic environments where I can apply critical thinking and problem-solving skills to derive actionable insights from data.
+  </p>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="container my-5">
+    <h2>Experience</h2>
+    <div class="row">
+      {% for exp in experiences %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm" onclick="toggleDescription(this)">
+          <div class="card-body">
+            <h5 class="card-title">{{ exp.title }}</h5>
+            <!-- Initially hidden description -->
+            <p class="card-text description" style="display: none;">{{ exp.desc }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects" class="container my-5">
+    <h2>Projects</h2>
+    <div class="row">
+      {% for proj in projects %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm" onclick="toggleDescription(this)">
+          <div class="card-body">
+            <h5 class="card-title">{{ proj.title }}</h5>
+            <!-- Initially hidden description -->
+            <p class="card-text description" style="display: none;">{{ proj.desc }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  
+<!-- Contact Section -->
+<section id="contact" class="container my-5">
+  <h2>Contact Me</h2>
+  <form action="{{ url_for('contact') }}" method="POST" class="mb-3">
+    <div class="mb-3">
+      <input type="text" name="name" class="form-control" placeholder="Your Name" />
+    </div>
+    <div class="mb-3">
+      <input type="email" name="email" class="form-control" placeholder="Your Email" />
+    </div>
+    <div class="mb-3">
+      <textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+  <p>Email: <a href="mailto:rittithaker2314@gmail.com">rittithaker2314@gmail.com</a></p>
+</section>
+{% endblock %}

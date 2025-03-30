@@ -1,0 +1,112 @@
+/* General Page Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header Section */
+header {
+  background: #333;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Section Headings */
+section h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Project and Experience Cards */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;  /* Light background color */
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer; /* Indicates that the card is clickable */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card .description {
+  display: none; /* Initially hide the description */
+}
+
+.card .card-body {
+  padding: 15px;
+}
+
+/* Contact Form */
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #9ecfff;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode nav.navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .card {
+  background-color: #333;
+  border: 1px solid #444;
+}
+
+body.dark-mode .card .card-title {
+  color: #fff;
+}
+
+body.dark-mode .card .card-text {
+  color: #ddd;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode footer {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+}
