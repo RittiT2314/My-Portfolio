@@ -2,15 +2,15 @@
 body {
   font-family: 'Arial', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #000; /* Black text */
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background: #f3e5f5; /* Pastel lavender background */
 }
 
 /* Header Section */
 header {
-  background: #333;
+  background: #ce93d8; /* Pastel purple */
   color: #fff;
   padding: 4rem 2rem;
   text-align: center;
@@ -18,7 +18,7 @@ header {
 
 /* Section Headings */
 section h2 {
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #ce93d8;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -27,23 +27,33 @@ section h2 {
 .card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #f9f9f9;  /* Light background color */
+  background-color: #fff;  /* Light background for cards */
   transition: transform 0.2s ease-in-out;
-  cursor: pointer; /* Indicates that the card is clickable */
+  cursor: pointer;
+  overflow: hidden; /* Prevent overflow issues */
+  margin: 1rem 0;
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
+/* Description initially hidden */
 .card .description {
-  display: none; /* Initially hide the description */
+  display: none;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+/* When card is active, show its description */
+.card.active .description {
+  display: block;
 }
 
 .card .card-body {
   padding: 15px;
 }
-
+  
 /* Contact Form */
 .contact form input,
 .contact form textarea {
@@ -57,7 +67,7 @@ section h2 {
 
 /* Footer */
 footer {
-  background: #333;
+  background: #ce93d8;
   color: #fff;
   padding: 1rem;
   text-align: center;
@@ -71,7 +81,6 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
 
 /* Dark Mode Styles */
 body.dark-mode {
